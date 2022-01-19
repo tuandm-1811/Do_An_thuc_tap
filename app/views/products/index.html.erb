@@ -1,0 +1,18 @@
+<% @products.each do |product| %>
+<%=  %> <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h5 class="card-title"><%= product.title %></h5>
+    </div>
+    <div class="col-sm">  <p class="card-text"> <%= product.content %>.</p> One of three columns
+    </div>
+    <div class="col-sm">
+    <a>
+      <%= link_to product.price, product_path(product) ,class:"btn btn-primary"%>
+      </a>   
+    </div>
+  </div>
+  <br>
+</div>
+ <% end %>
+  <%yield%>

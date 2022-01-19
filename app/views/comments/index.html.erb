@@ -1,0 +1,8 @@
+
+
+<% @comments.each do |comment| %>
+<%= comment.comment_content %>
+<%= comment.user_id %>
+<%= comment.product_id %>
+ <% end %>
+  <%yield%>
