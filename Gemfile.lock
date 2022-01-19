@@ -236,6 +236,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
+  tilt
   turbolinks (~> 5)
   web-console (>= 4.1.0)
   webdrivers
