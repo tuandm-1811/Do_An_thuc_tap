@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     delete "sign_out" => "devise/sessions#destroy"
     get
   end
-  resources :products do
-    resources :comments
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
   end
-  
+
+  resources :products, concerns: :paginatable
+    resources :comments
 end
