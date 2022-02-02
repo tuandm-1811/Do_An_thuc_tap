@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     get "sign_in" => "devise/sessions#new"
     post "sign_in" => "devise/sessions#create"
     delete "sign_out" => "devise/sessions#destroy"
-    get
+  end
+  namespace :admin do 
+    resources :products do
+      resources :comments
+    end
   end
   concern :paginatable do
     get '(page/:page)', action: :index, on: :collection, as: ''

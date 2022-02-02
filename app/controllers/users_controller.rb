@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action:resource,resource_name,devise_mapping 
+  
+  before_action :resource,:resource_name,:devise_mapping 
   
   protected
   def resource_name
