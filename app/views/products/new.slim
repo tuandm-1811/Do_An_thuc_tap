@@ -1,0 +1,18 @@
+
+.tabs-container
+  ul.nav.nav-tabs
+    li.active
+      a aria-expanded="true" data-toggle="tab" href="#basic-information"
+        = t(".basic_information")
+    li
+      a aria-expanded="false" data-toggle="tab" href="#comments"
+        = t(".comments")
+
+  .tab-content
+    #basic-information.tab-pane.active
+      .panel-body
+        = render "form", product: @product
+    #comments.tab-pane
+      .panel-body
+        = render partial: "comments_form",
+          locals: {product: @product}
