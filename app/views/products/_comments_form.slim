@@ -1,0 +1,17 @@
+  = simple_form_for product do |f|
+    = f.hidden_field :id
+    #comments
+      = f.fields_for :comments do |comment|
+        = render partial: "shared/comment_fields",
+          locals: {f: comment}
+
+      .links.text-center.margin-top-10
+        = link_to_add_association f, :comments, partial: "shared/comment_fields",
+          class: "btn btn-default" do
+          span.fa.fa-plus
+          =< t(".add_sample")
+
+    .text-center.margin-top-20
+      = link_to "#!", class: "btn btn-w-m btn-primary",
+        data: {disable_with: t(".submitting")} do
+        = t(".save")

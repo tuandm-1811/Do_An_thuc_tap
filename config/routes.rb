@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#index"
- 
+  resources :static_pages
   devise_for :users do
     get "sign_in" => "devise/sessions#new"
     post "sign_in" => "devise/sessions#create"
@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
 
-  resources :products, concerns: :paginatable
+  resources :products do
     resources :comments
+    member do 
+      get :destroy
+    end
+  end
 end
