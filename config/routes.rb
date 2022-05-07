@@ -17,8 +17,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :comments
-    member do 
-      get :destroy
-    end
+  end
+  resources :comments do
   end
 end
