@@ -14,7 +14,8 @@ def index
   end
 end
 def show
-    @comments = @product.comments.all    
+  
+  @comments = @product.comments.all    
 end
 def create
   @product = Product.new(product_params)

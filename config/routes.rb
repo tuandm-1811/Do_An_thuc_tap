@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :comments
-    member do 
-      get :destroy
-    end
+    get '/products/:id', to: 'products#index', as: 'product'
+  end
+  resources :comments do
   end
 end
